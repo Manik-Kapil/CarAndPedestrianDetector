@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Vehicle</title>
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
+        /* Header Styles */
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            width: 150px;
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav ul li {
+            margin-left: 20px;
+        }
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .nav ul li a:hover {
+            color: #317d54;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        /* Hero Section Styles */
+        .hero-section {
+            background: url('static/images/background.jpg') center/cover no-repeat;
+            background-size: cover;
+            color: black;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(1px);
+        }
+        .hero-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-title, .hero-subtitle {
+            color: black;
+        }
+        /* Upload Section Styles */
+        .upload-section {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .upload-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .file-upload {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .predict-button {
+            background-color: #4eb57d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .predict-button:hover {
+            background-color: #317d54;
+        }
+        .image-display {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .image-card {
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: white;
+            width: 45%;
+        }
+        .image-card img {
+            max-width: 100%;
+        }
+        /* Footer Section Styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .company-info,
+        .quick-links,
+        .contact-form {
+            width: 30%;
+        }
+        .company-info h3,
+        .quick-links h3,
+        .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .company-info p {
+            font-size: 16px;
+        }
+        .quick-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .quick-links ul li {
+            margin-bottom: 10px;
+        }
+        .quick-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .quick-links ul li a:hover {
+            color: #317d54;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #4eb57d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #317d54;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="static/images/Company Logo.jpg" alt="Company Logo">
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <p>Call us: (289) 688-9612</p>
+                <p>Email: info@company.com</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Empowering Autonomous Vehicles with AI-Driven Object Detection</h1>
+            <p class="hero-subtitle">Safety, Efficiency, Innovation – All in Real-Time</p>
+            <a href="#" class="predict-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section">
+        <div class="container">
+            <h2 class="upload-title">Test Our Technology</h2>
+            <form id="upload-form">
+                <div class="file-upload">
+                    <label for="formFile">Choose Image:</label>
+                    <input type="file" id="formFile">
+                </div>
+                <button type="button" class="predict-button" id="uploadButton">Predict</button>
+            </form>
+            <div class="image-display">
+                <div class="image-card" id="uploaded-image-card">
+                    <h3>Uploaded Image:</h3>
+                    <img id="uploadedImage" src="#" alt="Uploaded Image" style="display: none;">
+                </div>
+                <div class="image-card" id="predicted-image-card">
+                    <h3>Predicted Image:</h3>
+                    <img id="predictedImage" src="#" alt="Predicted Image" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-info">
+                    <h3>About Our Company</h3>
+                    <p>Revolutionizing road safety and autonomous driving with cutting-edge computer vision technology.</p>
+                </div>
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <h3>Contact Us</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                        <textarea placeholder="Your Message"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for handling image upload and prediction -->
+    <script>
+        // Preview the uploaded image
+        document.getElementById("formFile").onchange = function (event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById("uploadedImage");
+                output.src = reader.result;
+                output.style.display = "block";
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+
+        // Handle form submission and show predicted image
+        document.getElementById("uploadButton").onclick = function(event) {
+            var formData = new FormData();
+            var fileInput = document.getElementById('formFile');
+
+            if (fileInput.files.length === 0) {
+                alert("Please choose a file first.");
+                return;
+            }
+
+            formData.append('file', fileInput.files[0]);
+
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('predictedImage').src = 'data:image/png;base64,' + data;
+                document.getElementById('predictedImage').style.display = "block";
+            })
+            .catch(error => {
+                alert('Failed to process the image.');
+            });
+        };
+    </script>
+</body>
+</html>
